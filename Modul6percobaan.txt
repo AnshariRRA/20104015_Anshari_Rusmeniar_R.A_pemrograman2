@@ -1,0 +1,142 @@
+package com.afif.pbo.modul6.percobaan;
+
+public class A {
+    protected int x;
+    protected int y;
+
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    public void setY(int y) {
+        this.y = y;
+    }
+    public void getNilai(){
+        System.out.println("nilai x : " + x + "nilai y : " + y);
+    }
+}
+
+
+public class B extends A{
+    private int z;
+
+    public void setZ(int z) {
+        this.z = z;
+    }
+
+    public void getJumlah(){
+        System.out.println("Jumlah : " + (x+y+z));
+    }
+
+}
+
+
+public class Bentuk {
+    protected int p,l;
+}
+
+
+public class InheritDemo {
+    public static void main(String[] args) {
+        Student siswa = new Student();
+
+    }
+}
+
+public class InheritanceTest {
+    public static void main(String[] args) {
+        A ortu = new A();
+        B anak = new B();
+
+        System.out.println("superclass");
+        ortu.setX(10);
+        ortu.setY(20);
+        ortu.getNilai();
+
+        System.out.println("subclass");
+        anak.setX(5);
+        anak.setY(4);
+        anak.setZ(50);
+        anak.getNilai();
+        anak.getJumlah();
+    }
+}
+
+public class Persegi extends Bentuk {
+    protected int p,l;
+
+    public void setSuperP(int p){
+        super.p = p;
+    }
+
+    public void setSuperL(int l){
+        super.l = l;
+    }
+
+    public void setP(int p) {
+        this.p = p;
+    }
+
+    public void setL(int l) {
+        this.l = l;
+    }
+    public  void getLuas(){
+        System.out.println("Luas super : " + (super.p * super.l));
+        System.out.println("Luas : " + (this.p * this.l));
+    }
+}
+
+public class PersegiTest {
+    public static void main(String[] args) {
+        Persegi kotak = new Persegi();
+
+        kotak.setSuperP(5);
+        kotak.setSuperL(10);
+
+        kotak.setP(3);
+        kotak.setL(13);
+
+        kotak.getLuas();
+    }
+}
+
+public class Person {
+    protected String name;
+    protected String address;
+
+    public Person(){
+        System.out.println("Inside Person : Constructor");
+        name = "";
+        address = "";
+    }
+
+    public Person(String name, String address){
+        this.name = name;
+        this.address = address;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+}
+
+public class Student extends Person{
+    public Student(){
+//        super("Ini nama", "Ini alamat");
+//        super();
+//        super.name = "Ini nama";
+        System.out.println("Inside Student : Constructor");
+    }
+}
